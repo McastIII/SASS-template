@@ -1,0 +1,136 @@
+.banner {
+    background: $clr-purple;
+    font-family: "Poppins", sans-serif;
+
+    &__wrapper {
+        padding-top: 8rem;
+        text-align: center;
+
+        h1 {
+            font-size: 2.5rem;
+            color: $clr-light;
+            font-weight: 800;
+            text-align: justify;
+
+        }
+
+        h4 {
+            padding-top: 3.5rem;
+            font-size: 1.8rem;
+            color: $clr-light;
+            text-align: justify;
+            font-weight: 100;
+            padding-bottom: 4rem;
+        }
+
+        img {
+            width: 31rem;
+        }
+
+        p {
+
+            font-size: 1.1rem;
+            text-align: justify;
+            color: $clr-light;
+            margin-bottom: 3rem;
+            line-height: 1.5rem;
+        }
+
+        span {
+            a{
+            text-decoration: underline;
+            color: $clr-light;
+        }
+        }
+    }
+
+    &__btn {
+
+        display: grid;
+        padding: 1.5rem 2rem;
+        border-radius: 1rem;
+        gap: 2.5rem;
+        margin-bottom: 2rem;
+        font-size: 1.5rem;
+
+        .btn.dark{
+            background: #000000;
+            padding-top: 1.7rem;
+            color: #ffffff;
+            border: 1px solid #000000;
+            height: 5.5rem;
+            border-radius: 4rem;
+            text-align: center;
+            font-weight: 600;
+
+        
+        }
+
+        .btn.white {
+            background: transparent;
+            color: #ffffff;
+            padding-top: 1.7rem;
+            border: 2px solid #ffffff;
+            height: 5.5rem;
+            border-radius: 4rem;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .btn.dark:hover{
+            transform: scale(1.05);
+        }
+
+        .btn.white:hover{
+            transform: scale(1.05);
+        }
+
+    }
+
+    @include mediaQuery($break-lg) {
+        .banner {
+
+            &__wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                img {
+                    width: 40rem;
+
+                }
+            }
+
+            &__text {
+
+                text-align: justify;
+
+                h1 {
+                    font-size: 3.5rem;
+                    max-width: 75rem;
+                }
+
+                h4 {
+                    font-size: 2.5rem;
+                }
+
+                p {
+                    font-size: 1.2rem;
+                    line-height: 1.5rem;
+                    max-width: 70rem;
+                }
+            }
+
+            &__btn {
+                display: flex;
+                padding-left: 0;
+                
+                a {
+                    padding: 1.5rem 4rem;
+                }
+
+                }
+            }
+        }
+
+    }
