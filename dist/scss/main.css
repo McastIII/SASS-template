@@ -22,7 +22,7 @@ body {
 }
 
 .container {
-  max-width: 140rem;
+  max-width: 120rem;
   padding: 1.5rem;
   margin: 0 auto;
 }
@@ -259,5 +259,248 @@ body {
   }
   .banner .banner__btn a {
     padding: 1.5rem 4rem;
+  }
+}
+
+.premium__wrapper {
+  font-family: "Poppins", sans-serif;
+}
+.premium__wrapper h2 {
+  text-align: center;
+  justify-content: ce;
+  font-size: 3rem;
+  font-weight: bolder;
+  margin: 2rem 0;
+}
+.premium__text {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 1rem;
+}
+.premium__features {
+  display: flex;
+  align-items: center;
+  margin: 2.5rem 0;
+}
+.premium__features img {
+  width: 120px;
+  height: 120px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-fit: center center;
+     object-fit: center center;
+  display: block;
+  margin: 2rem 0;
+  margin-right: 2rem;
+}
+.premium .feature__text {
+  display: block;
+  align-items: center;
+}
+.premium .feature__text h4 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.premium .feature__text p {
+  font-size: 1.5rem;
+}
+@media screen and (min-width: 1080px) {
+  .premium__wrapper h2 {
+    font-size: 4rem;
+    margin-bottom: 6rem;
+  }
+  .premium__text {
+    display: flex;
+    justify-content: center;
+  }
+  .premium__features {
+    display: unset;
+    justify-content: space-between;
+    margin: 0 2rem;
+  }
+  .premium__features img {
+    width: 142px;
+    height: 142px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-fit: center center;
+       object-fit: center center;
+    display: block;
+    margin: 0 6rem;
+  }
+  .premium__features h4 {
+    text-align: center;
+    margin: 2rem 0;
+    justify-content: center;
+  }
+  .premium__features p {
+    text-align: center;
+  }
+}
+
+.pick {
+  background-color: #efefef;
+}
+.pick__wrapper {
+  font-family: "Poppins", sans-serif;
+}
+.pick__wrapper h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  text-align: center;
+}
+.pick__wrapper p {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.pick__offer {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 1rem;
+  gap: 2rem;
+}
+.pick .logo__list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5.5rem;
+}
+.pick .logo__list ul {
+  justify-content: center;
+  display: flex;
+  margin-bottom: 2rem;
+}
+.pick .logo__list ul li {
+  margin: 0 0.2rem;
+}
+.pick .logo__list ul li img {
+  width: 3rem;
+}
+.pick .logo__list span {
+  text-decoration: underline;
+}
+.pick .logo__list span:hover + .logo__hide {
+  display: grid;
+  background: hsl(0, 0%, 100%);
+  padding: 1rem;
+  border-radius: 4px;
+  position: absolute;
+  top: 199rem;
+  left: 26rem;
+  grid-template-columns: 3.5rem 3.5rem 3.5rem 3.5rem;
+}
+.pick .logo__list .logo__hide {
+  display: none;
+}
+.pick .plan {
+  background: hsl(0, 0%, 100%);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+.pick .plan .terms {
+  text-decoration: underline;
+  font-size: 1.2rem;
+  color: hsl(0, 0%, 46%);
+}
+.pick .plan .note {
+  font-size: 1.2rem;
+  color: hsl(0, 0%, 46%);
+}
+.pick .plan p {
+  text-align: justify;
+  line-height: 1.5rem;
+}
+.pick .plan i {
+  padding-right: 1rem;
+}
+.pick .plan__name {
+  padding-bottom: 1.5rem;
+  border-bottom: solid 1px hsl(0, 0%, 20%);
+}
+.pick .plan__name h3 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.pick .plan__name span {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.pick .plan__name .blue {
+  padding: 0.5rem 0.5rem;
+  background: #0d72ea;
+  color: hsl(0, 0%, 100%);
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+.pick .plan__name .white {
+  padding: 0.5rem 0.5rem;
+  background: transparent;
+  color: #0d72ea;
+  border: 1px solid #0d72ea;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+.pick .plan__description {
+  margin-top: 3rem;
+}
+.pick .plan__description ul li {
+  margin: 2rem 0;
+  display: flex;
+  line-height: 1.5rem;
+  gap: 1rem;
+}
+.pick__button {
+  display: grid;
+  padding: 2rem 2rem;
+  border-radius: 1rem;
+  gap: 2.5rem;
+  font-size: 1.5rem;
+}
+.pick__button .btn.start {
+  background: #000000;
+  padding-top: 1.7rem;
+  color: #ffffff;
+  border: 1px solid #000000;
+  height: 5.5rem;
+  border-radius: 4rem;
+  text-align: center;
+  font-weight: 600;
+}
+.pick__button .btn.start:hover {
+  transform: scale(1.05);
+}
+@media screen and (min-width: 1080px) {
+  .pick .logo__list span {
+    text-decoration: underline;
+  }
+  .pick .logo__list span:hover + .logo__hide {
+    display: grid;
+    background: hsl(0, 0%, 100%);
+    padding: 1rem;
+    border-radius: 4px;
+    position: absolute;
+    top: 104rem;
+    left: 97rem;
+    grid-template-columns: 3.5rem 3.5rem 3.5rem 3.5rem;
+  }
+  .pick__offer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1rem;
+  }
+  .pick .plan__name {
+    min-height: 24rem;
+  }
+  .pick .plan__name p {
+    text-align: unset;
+  }
+  .pick .plan__description {
+    min-height: 25rem;
   }
 }/*# sourceMappingURL=main.css.map */
