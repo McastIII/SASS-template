@@ -10,7 +10,7 @@
             font-size: 2.5rem;
             color: $clr-light;
             font-weight: 800;
-            text-align: justify;
+            // text-align: ;
 
         }
 
@@ -87,14 +87,77 @@
         }
 
     }
+    
+
+    @include mediaQuery($break-md){
+
+        &__wrapper{
+            margin: 0 5rem;
+        }
+
+        &__text{
+            max-width: 63rem;
+            text-align: justify;
+            margin: 0 rem;
+        }
+
+        &__btn{
+            display: flex;
+
+            .btn.dark {
+                padding: 1.7rem;
+            }
+        
+            .btn.white {
+                padding: 1.7rem;
+            }
+        }
+    }
 
     @include mediaQuery($break-lg) {
+        .banner {
+
+    
+            &__text {
+                max-width: 120rem;
+                text-align: justify;
+
+                h1 {
+                    font-size: 3.5rem;
+                    // max-width: 75rem;
+                }
+
+                h4 {
+                    font-size: 2.5rem;
+                }
+
+                p {
+                    font-size: 1.2rem;
+                    line-height: 1.5rem;
+                    max-width: 70rem;
+                }
+            }
+
+            &__btn {
+                display: flex;
+                padding-left: 0;
+
+                a {
+                    padding: 1.5rem 4rem;
+                }
+
+            }
+        }
+    }
+    @include mediaQuery($break-xl) {
         .banner {
 
             &__wrapper {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+                margin: unset;
+                padding-top: 13rem;
 
                 img {
                     width: 40rem;
@@ -134,6 +197,7 @@
         }
     }
 
+
 }
 
 // PREMIUM
@@ -145,7 +209,6 @@
 
         h2 {
             text-align: center;
-            justify-content: ce;
             font-size: 3rem;
             font-weight: bolder;
             margin: 2rem 0;
@@ -189,8 +252,75 @@
         }
     }
 
+    @include mediaQuery($break-md){
+
+    
+        
+        &__text{
+            @include grid (2,5rem);
+
+            &__features{
+                width: unset;
+                display: flex;
+                padding-top: 5rem;
+                &:not(:first-child){
+                    margin-top: 0rem;
+                }
+    
+                @include imgFit(10rem, 100%);
+            }
+        }
+
+    
+
+        .feature__text{
+            display: block;
+            
+        }
+    
+    }
+
 
     @include mediaQuery($break-lg) {
+
+        &__wrapper {
+            h2 {
+                font-size: 4rem;
+                margin-bottom: 6rem;
+            }
+        }
+
+        &__text {
+            @include grid (2,5rem);
+        }
+
+        &__features {
+
+            display: unset;
+            justify-content: space-between;
+            margin: 0 2rem;
+
+
+            img {
+                @include imgFit(142px, 142px);
+                margin: 0 auto;
+            }
+
+            h4 {
+                text-align: center;
+                margin: 2rem 0;
+                justify-content: center;
+
+            }
+
+            p {
+                text-align: center;
+                margin-bottom: 4rem;
+            }
+        }
+
+    }
+    @include mediaQuery($break-xl) {
 
         &__wrapper {
             h2 {
@@ -225,6 +355,7 @@
 
             p {
                 text-align: center;
+                margin-bottom: 4rem;
             }
         }
 
@@ -237,7 +368,7 @@
 
 //PICK YOUR PREMIUM
 
-.pick {
+.pick { 
 
     background-color: #efefef;
 
@@ -246,6 +377,7 @@
         font-family: "Poppins", sans-serif;
 
         h2 {
+            font-weight: bolder;
             margin-top: 2rem;
             margin-bottom: 1rem;
             font-size: 3rem;
@@ -261,6 +393,8 @@
     &__offer {
         @include grid();
         gap: 2rem;
+        padding-bottom: 6rem;
+        
     }
 
     .logo__list {
@@ -301,6 +435,7 @@
         }
 
         .logo__hide {
+            // position: relative;
             display: none;
         }
 
@@ -310,6 +445,7 @@
         background: $clr-light;
         border-radius: 1rem;
         padding: 1.5rem;
+        width: 45rem;
 
 
         .terms {
@@ -412,8 +548,14 @@
         }
     }
 
-    @include mediaQuery($break-lg) {
+    @include mediaQuery($break-md){
 
+        &__offer{
+            padding-bottom: 6rem;
+        }
+        .plan{
+            margin: 0 auto;
+        }
 
         .logo__list{
             span {
@@ -425,7 +567,75 @@
                         padding: 1rem;
                         border-radius: 4px;
                         position: absolute;
-                        top: 104rem;
+                        top: 149rem;
+                        left: 48rem;
+                        grid-template-columns: 3.5rem 3.5rem 3.5rem 3.5rem;
+                }
+            }
+        }
+    }
+    
+    @include mediaQuery($break-lg) {
+
+
+        &__wrapper{
+            h2{
+            font-size: 4rem;
+            }
+        }
+        .logo__list{
+            span {
+                text-decoration: underline;
+    
+                &:hover + .logo__hide{
+                    display: grid;
+                        background: $clr-light;
+                        padding: 1rem;
+                        border-radius: 4px;
+                        position: absolute;
+                        top: 126rem;
+                        left: 97rem;
+                        grid-template-columns: 3.5rem 3.5rem 3.5rem 3.5rem;
+                }
+            }
+        }
+
+
+        .plan {
+
+            width: 50rem;
+            &__name {
+
+                p {
+                    text-align: unset;
+                }
+
+            }
+
+
+
+        }
+
+    }
+    @include mediaQuery($break-xl) {
+
+
+        &__wrapper{
+            h2{
+            font-size: 4rem;
+            }
+        }
+        .logo__list{
+            span {
+                text-decoration: underline;
+    
+                &:hover + .logo__hide{
+                    display: grid;
+                        background: $clr-light;
+                        padding: 1rem;
+                        border-radius: 4px;
+                        position: absolute;
+                        top: 109rem;
                         left: 97rem;
                         grid-template-columns: 3.5rem 3.5rem 3.5rem 3.5rem;
                 }
@@ -438,7 +648,7 @@
 
         .plan {
 
-
+            width: unset;
             &__name {
                 min-height: 24rem;
 

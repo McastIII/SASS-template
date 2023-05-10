@@ -27,11 +27,82 @@ body {
   margin: 0 auto;
 }
 
+.footer {
+  background: hsl(0, 0%, 0%);
+}
+.footer__wrapper {
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+.footer__wrapper h5 {
+  align-items: center;
+  text-align: right;
+  font-size: 1rem;
+  color: gray;
+  font-weight: lighter;
+}
+.footer__wrapper h5 span:hover {
+  cursor: pointer;
+  color: hsl(159, 100%, 19%);
+}
+.footer__wrapper img {
+  margin-right: 0.5rem;
+}
+.footer__content {
+  margin: 2rem 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.footer__content ul {
+  max-width: 25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.footer__content ul li a {
+  font-size: 1rem;
+  color: gray;
+}
+.footer__content ul li a:hover {
+  color: hsl(159, 100%, 19%);
+}
+.footer__content p {
+  font-size: 1rem;
+  color: hsl(0, 0%, 46%);
+}
+@media screen and (min-width: 768px) {
+  .footer__content ul {
+    max-width: 40rem;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .footer__wrapper h5 {
+    font-size: 1.2rem;
+    font-weight: lighter;
+  }
+  .footer__content ul {
+    max-width: 40rem;
+    display: flex;
+    flex-wrap: unset;
+    gap: 3rem;
+  }
+  .footer__content ul li a {
+    font-size: 1.1rem;
+  }
+  .footer__content p {
+    font-size: 1.2rem;
+  }
+}
+
 .header {
   background: hsl(0, 0%, 0%);
   position: relative;
   position: fixed;
   width: 100%;
+}
+.header.blue {
+  background: blue;
 }
 .header .blur {
   height: 100vh;
@@ -122,6 +193,46 @@ body {
   transform: translate(0, -3px) rotate(-225deg);
   transition: 0.5s ease;
 }
+@media screen and (min-width: 768px) {
+  .header .blur {
+    height: 100vh;
+    width: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    left: 150rem;
+    z-index: 999;
+    transition: 0.5s ease;
+  }
+  .header .blur.open {
+    left: 0;
+    transition: 0.5s ease;
+  }
+  .header__nav {
+    font-family: "Poppins", sans-serif;
+    position: absolute;
+    top: 0;
+    right: -100rem;
+    background: hsl(0, 0%, 0%);
+    height: 100vh;
+    width: 50%;
+    transition: 0.5s ease;
+  }
+  .header__nav.open {
+    right: 0;
+    transition: 0.5s ease;
+  }
+  .header__nav ul span {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+  .header__nav ul li a {
+    font-weight: bold;
+  }
+  .header__nav ul li .btn {
+    font-weight: light;
+  }
+}
 @media screen and (min-width: 1080px) {
   .header .toggle__menu {
     display: none;
@@ -159,6 +270,143 @@ body {
   }
 }
 
+.links {
+  padding: 5rem 0;
+  background: hsl(0, 0%, 0%);
+}
+.links img {
+  width: 10rem;
+}
+.links__wrapper {
+  font-family: "Poppins", sans-serif;
+}
+.links__drop {
+  margin: 5rem 0;
+}
+.links__drop__item:not(:first-child), .links__drop__item:not(:last-child) {
+  margin: 3rem 0;
+}
+.links__drop__item h4 {
+  color: hsl(0, 0%, 46%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.links__drop__item h4 i {
+  transition: 0.5s ease;
+}
+.links__drop__item h4 i.open {
+  transform: rotate(180deg);
+  transition: 0.5s ease;
+}
+.links__drop__item ul {
+  margin: 0 2rem;
+  max-height: 0rem;
+  overflow: hidden;
+  transition: 0.5s ease;
+}
+.links__drop__item ul.open {
+  max-height: 25rem;
+  transition: 0.5s ease;
+}
+.links__drop__item ul li {
+  padding: 1rem 0;
+}
+.links__drop__item ul li a {
+  color: hsl(0, 0%, 100%);
+  font-size: 2rem;
+}
+.links__drop__item ul li:hover {
+  cursor: pointer;
+}
+.links__drop__item ul li:hover a {
+  color: hsl(159, 100%, 19%);
+}
+.links__social ul {
+  display: flex;
+  gap: 2rem;
+}
+.links__social ul li a {
+  color: hsl(0, 0%, 100%);
+  display: inline-block;
+  background: gray;
+  padding: 1.5rem;
+  border-radius: 5rem;
+  width: 5rem;
+  text-align: center;
+}
+.links__social ul li:hover a {
+  color: hsl(159, 100%, 19%);
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .links__wrapper {
+    display: block;
+  }
+  .links__social ul {
+    margin-top: 8rem;
+    justify-content: flex-start;
+  }
+}
+@media screen and (min-width: 1080px) {
+  .links__wrapper {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1.5fr;
+    grid-gap: 3rem;
+  }
+  .links__drop {
+    margin: 0;
+    display: flex;
+    align-items: start;
+    gap: 6.5rem;
+  }
+  .links__drop__item:not(:first-child), .links__drop__item:not(:last-child) {
+    margin: 0;
+  }
+  .links__drop__item h4 {
+    pointer-events: none;
+  }
+  .links__drop__item h4 i {
+    display: none;
+  }
+  .links__drop__item ul {
+    max-height: 20rem;
+    margin: 1rem 0;
+  }
+  .links__social ul {
+    justify-content: flex-end;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .links__wrapper {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1.5fr;
+    grid-gap: 3rem;
+  }
+  .links__drop {
+    margin: 0;
+    display: flex;
+    align-items: start;
+    gap: 6.5rem;
+  }
+  .links__drop__item:not(:first-child), .links__drop__item:not(:last-child) {
+    margin: 0;
+  }
+  .links__drop__item h4 {
+    pointer-events: none;
+  }
+  .links__drop__item h4 i {
+    display: none;
+  }
+  .links__drop__item ul {
+    max-height: 20rem;
+    margin: 1rem 0;
+  }
+  .links__social ul {
+    justify-content: flex-end;
+  }
+}
+
 .banner {
   background: hsl(311.03, 62.96%, 42.35%);
   font-family: "Poppins", sans-serif;
@@ -171,7 +419,6 @@ body {
   font-size: 2.5rem;
   color: hsl(0, 0%, 100%);
   font-weight: 800;
-  text-align: justify;
 }
 .banner__wrapper h4 {
   padding-top: 3.5rem;
@@ -229,11 +476,56 @@ body {
 .banner__btn .btn.white:hover {
   transform: scale(1.05);
 }
+@media screen and (min-width: 768px) {
+  .banner__wrapper {
+    margin: 0 5rem;
+  }
+  .banner__text {
+    max-width: 63rem;
+    text-align: justify;
+    margin: 0 rem;
+  }
+  .banner__btn {
+    display: flex;
+  }
+  .banner__btn .btn.dark {
+    padding: 1.7rem;
+  }
+  .banner__btn .btn.white {
+    padding: 1.7rem;
+  }
+}
 @media screen and (min-width: 1080px) {
+  .banner .banner__text {
+    max-width: 120rem;
+    text-align: justify;
+  }
+  .banner .banner__text h1 {
+    font-size: 3.5rem;
+  }
+  .banner .banner__text h4 {
+    font-size: 2.5rem;
+  }
+  .banner .banner__text p {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    max-width: 70rem;
+  }
+  .banner .banner__btn {
+    display: flex;
+    padding-left: 0;
+  }
+  .banner .banner__btn a {
+    padding: 1.5rem 4rem;
+  }
+}
+@media screen and (min-width: 1920px) {
   .banner .banner__wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: unset;
+    padding-top: 13rem;
   }
   .banner .banner__wrapper img {
     width: 40rem;
@@ -267,7 +559,6 @@ body {
 }
 .premium__wrapper h2 {
   text-align: center;
-  justify-content: ce;
   font-size: 3rem;
   font-weight: bolder;
   margin: 2rem 0;
@@ -305,7 +596,67 @@ body {
 .premium .feature__text p {
   font-size: 1.5rem;
 }
+@media screen and (min-width: 768px) {
+  .premium__text {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5rem;
+  }
+  .premium__text__features {
+    width: unset;
+    display: flex;
+    padding-top: 5rem;
+    width: 10rem;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-fit: center center;
+       object-fit: center center;
+    display: block;
+  }
+  .premium__text__features:not(:first-child) {
+    margin-top: 0rem;
+  }
+  .premium .feature__text {
+    display: block;
+  }
+}
 @media screen and (min-width: 1080px) {
+  .premium__wrapper h2 {
+    font-size: 4rem;
+    margin-bottom: 6rem;
+  }
+  .premium__text {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5rem;
+  }
+  .premium__features {
+    display: unset;
+    justify-content: space-between;
+    margin: 0 2rem;
+  }
+  .premium__features img {
+    width: 142px;
+    height: 142px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-fit: center center;
+       object-fit: center center;
+    display: block;
+    margin: 0 auto;
+  }
+  .premium__features h4 {
+    text-align: center;
+    margin: 2rem 0;
+    justify-content: center;
+  }
+  .premium__features p {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+}
+@media screen and (min-width: 1920px) {
   .premium__wrapper h2 {
     font-size: 4rem;
     margin-bottom: 6rem;
@@ -336,6 +687,7 @@ body {
   }
   .premium__features p {
     text-align: center;
+    margin-bottom: 4rem;
   }
 }
 
@@ -346,6 +698,7 @@ body {
   font-family: "Poppins", sans-serif;
 }
 .pick__wrapper h2 {
+  font-weight: bolder;
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-size: 3rem;
@@ -360,6 +713,7 @@ body {
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 1rem;
   gap: 2rem;
+  padding-bottom: 6rem;
 }
 .pick .logo__list {
   display: flex;
@@ -397,6 +751,7 @@ body {
   background: hsl(0, 0%, 100%);
   border-radius: 1rem;
   padding: 1.5rem;
+  width: 45rem;
 }
 .pick .plan .terms {
   text-decoration: underline;
@@ -475,7 +830,13 @@ body {
 .pick__button .btn.start:hover {
   transform: scale(1.05);
 }
-@media screen and (min-width: 1080px) {
+@media screen and (min-width: 768px) {
+  .pick__offer {
+    padding-bottom: 6rem;
+  }
+  .pick .plan {
+    margin: 0 auto;
+  }
   .pick .logo__list span {
     text-decoration: underline;
   }
@@ -485,7 +846,49 @@ body {
     padding: 1rem;
     border-radius: 4px;
     position: absolute;
-    top: 104rem;
+    top: 149rem;
+    left: 48rem;
+    grid-template-columns: 3.5rem 3.5rem 3.5rem 3.5rem;
+  }
+}
+@media screen and (min-width: 1080px) {
+  .pick__wrapper h2 {
+    font-size: 4rem;
+  }
+  .pick .logo__list span {
+    text-decoration: underline;
+  }
+  .pick .logo__list span:hover + .logo__hide {
+    display: grid;
+    background: hsl(0, 0%, 100%);
+    padding: 1rem;
+    border-radius: 4px;
+    position: absolute;
+    top: 126rem;
+    left: 97rem;
+    grid-template-columns: 3.5rem 3.5rem 3.5rem 3.5rem;
+  }
+  .pick .plan {
+    width: 50rem;
+  }
+  .pick .plan__name p {
+    text-align: unset;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .pick__wrapper h2 {
+    font-size: 4rem;
+  }
+  .pick .logo__list span {
+    text-decoration: underline;
+  }
+  .pick .logo__list span:hover + .logo__hide {
+    display: grid;
+    background: hsl(0, 0%, 100%);
+    padding: 1rem;
+    border-radius: 4px;
+    position: absolute;
+    top: 109rem;
     left: 97rem;
     grid-template-columns: 3.5rem 3.5rem 3.5rem 3.5rem;
   }
@@ -493,6 +896,9 @@ body {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 1rem;
+  }
+  .pick .plan {
+    width: unset;
   }
   .pick .plan__name {
     min-height: 24rem;

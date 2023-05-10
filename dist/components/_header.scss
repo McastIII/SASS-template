@@ -1,58 +1,14 @@
-// .header{
-
-//     background: $clr-black;
-
-
-//     .branding{
-
-//         display: flex;
-//         align-items: center;
-//         gap: 2rem;
-
-//         img{
-//             width: 7rem;
-//         }
-
-//     }
-
-//     &__nav{
-//         ul{
-//             display: flex;
-//             align-items: center;
-//             gap: 2rem;
-//         }
-
-//         a{
-//             color: $clr-light;
-//             font-weight: 600;
-//             font-family: "Poppins", sans-serif;
-//             font-size: 1rem;
-//             text-decoration: none;
-//         }
-//         a:hover{
-//             color: $clr-green;
-//         }
-//         li:nth-child(3){
-//             border-right: solid 1px #ffffff;
-//             padding-right: 2rem;
-//         }
-//     }
-
-// &__wrapper{
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
-// }
-
-// }
-
-
 //HEADER
 .header {
+
+    &.blue{
+        background: blue;
+    }
     background: $clr-black;
     position: relative;
     position: fixed;
     width: 100%;
+
 
     .blur {
         height: 100vh;
@@ -180,6 +136,57 @@
         }
     }
 
+    @include mediaQuery($break-md){
+        .blur {
+            height: 100vh;
+            width: 50%;
+            background: rgba(0, 0, 0, .6);
+            position: absolute;
+            top: 0;
+            left: 150rem;
+            z-index: 999;
+            transition: .5s ease;
+    
+            &.open {
+                left: 0;
+                transition: .5s ease;
+            }
+        }
+
+        &__nav{
+            font-family: "Poppins", sans-serif;
+        position: absolute;
+        top: 0;
+        right: -100rem;
+        background: $clr-black;
+        height: 100vh;
+        width: 50%;
+        transition: .5s ease;
+
+        &.open {
+            right: 0;
+            transition: .5s ease;
+        }
+
+        ul{
+            span{
+                margin-top: 3rem;
+                margin-bottom: 3rem;
+            }
+            li{
+                a{
+                    font-weight: bold;
+                }
+                
+                .btn{
+                    font-weight: light;
+                }
+            }
+        }
+        }
+
+    }
+
     @include mediaQuery($break-lg) {
 
         .toggle__menu{
@@ -222,5 +229,6 @@
         }
 
     }
+
 }
 
